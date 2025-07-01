@@ -25,7 +25,7 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl font-bold mb-2 text-center">Get In Touch</h1>
         <p className="text-xl text-center mb-16 text-orange-300">
-          Let's build something amazing together
+          Let&#39;s build something amazing together
         </p>
 
         <div className="">

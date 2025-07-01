@@ -129,10 +129,10 @@ export default function Me() {
             I have recently completed my Bachelor of Technology (B.Tech.) with a major in <span className="text-orange-500 font-semibold">Computer Science and Engineering</span>.
           </p>
           <p className="mb-4">
-            I'm a <span className="text-orange-500 font-semibold">Java Developer</span> with solid skills in <span className="text-orange-500 font-semibold">Backend development</span>, <span className="text-orange-500 font-semibold">Frontend development</span>, <span className="text-orange-500 font-semibold">Full-stack projects</span> and <span className="text-orange-500 font-semibold">Data Structures & Algorithms</span>.
+            I&#39;m a <span className="text-orange-500 font-semibold">Java Developer</span> with solid skills in <span className="text-orange-500 font-semibold">Backend development</span>, <span className="text-orange-500 font-semibold">Frontend development</span>, <span className="text-orange-500 font-semibold">Full-stack projects</span> and <span className="text-orange-500 font-semibold">Data Structures & Algorithms</span>.
           </p>
           <p className="mb-4">
-            I'm passionate about exploring 
+            I&#39;m passionate about exploring 
             <span className="text-blue-400 font-medium"> human behavior</span>, understanding the beauty of 
             <span className="text-blue-400 font-medium"> physics</span>, diving into 
             <span className="text-blue-400 font-medium"> tech innovations</span>, and asking questions about 
@@ -143,7 +143,7 @@ export default function Me() {
           </p>
 
           <p className="mb-4">
-            I enjoy solving problems, building real-world apps, and constantly leveling up as a developer. Currently, I'm focused on becoming job-ready and aiming to make a real impact in the tech world.
+            I enjoy solving problems, building real-world apps, and constantly leveling up as a developer. Currently, I&#39;m focused on becoming job-ready and aiming to make a real impact in the tech world.
           </p>
 
           
