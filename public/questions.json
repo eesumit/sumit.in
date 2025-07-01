@@ -1,0 +1,15 @@
+const questions = [
+    {
+        id: 1,
+        question: "What is JavaScript?",
+        answer: "JavaScript is a programming language used for web development."
+    },
+    {
+        id: 2,
+        question: "What is JSON?",
+        answer: "JSON stands for JavaScript Object Notation, a lightweight data-interchange format."
+    }
+    // Add more questions as needed
+];
+
+export default questions;
