@@ -153,7 +153,7 @@ export default function Me() {
         </motion.div>
         <motion.div className="mb-8" variants={item}>
           <a
-            href="/sumitr.resume.pdf"
+            href="/sumit.resume.pdf"
             download
             className="inline-block px-6 py-2 bg-orange-500 text-white font-semibold rounded-md shadow hover:bg-orange-600 transition-colors duration-200"
           >
