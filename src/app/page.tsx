@@ -151,6 +151,15 @@ export default function Me() {
             Apart from this I love <span className="text-orange-500 font-semibold">Modern Physics & Astronomy</span>.
           </p>
         </motion.div>
+        <motion.div className="mb-8" variants={item}>
+          <a
+            href="/sumitr.resume.pdf"
+            download
+            className="inline-block px-6 py-2 bg-orange-500 text-white font-semibold rounded-md shadow hover:bg-orange-600 transition-colors duration-200"
+          >
+            Download Resume
+          </a>
+        </motion.div>
         <motion.h1
           className="font-bold text-3xl md:text-4xl mb-4"
           variants={item}
