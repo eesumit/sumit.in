@@ -53,6 +53,24 @@ const Header: React.FC = () => {
     <div className="w-full fixed top-0 z-50 py-2">
       {/* Wrapper */}
       <div className="relative w-full h-16 flex items-center">
+        {/* Mobile Hamburger Menu */}
+        <div className="md:hidden absolute right-12 top-1/2 -translate-y-1/2 z-50 cursor-pointer">
+          <div 
+            className="flex flex-col space-y-1"
+            onClick={() => setMenuOpen(prev => !prev)}
+          >
+            <motion.div
+              className="w-6 h-0.5 bg-white rounded"
+              animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 5 : 0 }}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.div
+              className="w-6 h-0.5 bg-white rounded"
+              animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -5 : 0 }}
+              transition={{ duration: 0.3 }}
+            />
+          </div>
+        </div>
 
         {/* Animated Header in center */}
         <AnimatePresence mode="wait">
@@ -105,6 +123,30 @@ const Header: React.FC = () => {
                 ))}
               </div>
 
+              {/* Mobile Navigation Menu */}
+              <AnimatePresence>
+                {menuOpen && (
+                  <motion.div 
+                    className="absolute top-12 right-0 w-full bg-[#2e2d2d] rounded-b-lg md:hidden"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {menuItems.map((item) => (
+                      <a
+                        key={`mobile-${item.name}`}
+                        href={item.path}
+                        className={`block px-6 py-4 font-medium ${isActive(item.path) ? 'text-white' : 'text-[#a8a5a5]'}`}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               {/* Search */}
               <motion.div
                 className="relative hidden sm:flex"
@@ -148,11 +190,11 @@ const Header: React.FC = () => {
           )}
         </AnimatePresence>
 
-        {/* Hamburger Icon on right */}
+        {/* Desktop Hamburger Icon on right */}
         {scrolled && (
           <motion.div
             key="hamburger"
-            className="absolute right-6 top-1/2 -translate-y-1/2 z-50 cursor-pointer bg-[#2e2d2d] rounded-lg p-6"
+            className="absolute right-6 top-1/2 -translate-y-1/2 z-50 cursor-pointer bg-[#2e2d2d] rounded-lg p-6 hidden md:block"
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 100, opacity: 0 }}
