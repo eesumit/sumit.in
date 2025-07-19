@@ -87,14 +87,13 @@ export default function TopicsPage() {
               <Link
                 href={`/tech-writings/${topic.slug}`}
                 className={`w-full py-4 rounded-lg shadow-md transition-all 
-                  hover:shadow-lg bg-white dark:bg-gray-800 border border-gray-200 
+                  hover:shadow-lg bg-gray-800 dark:bg-gray-800 border border-gray-200 
                   dark:border-gray-700 flex items-center justify-center text-center 
-                  hover:text-orange-500 hover:border-orange-400`}
+                  hover:text-orange-500 hover:border-orange-400 text-white 
+                  dark:text-gray-100`}
               >
                 <span className="font-medium text-lg md:text-2xl">
-                 
                     {topic.name}
-                  
                 </span>
               </Link>
             </motion.div>
