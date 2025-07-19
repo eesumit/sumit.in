@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 interface Topic {
   name: string;
@@ -49,20 +49,20 @@ const itemVariants: Variants = {
 };
 
 export default function TopicsPage() {
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth < 768);
+  //   };
     
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  //   handleResize();
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className="mt-10 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -71,7 +71,7 @@ export default function TopicsPage() {
       >
         <motion.h1 
           variants={itemVariants}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center text-orange-500"
+          className="text-2xl md:text-5xl font-bold mb-12 text-center text-orange-500"
         >
           Here are some topics that I studied extensively and wrote about:
         </motion.h1>
@@ -86,18 +86,15 @@ export default function TopicsPage() {
             >
               <Link
                 href={`/tech-writings/${topic.slug}`}
-                className={`w-full max-w-xs p-6 rounded-lg shadow-md transition-all 
+                className={`w-full py-4 rounded-lg shadow-md transition-all 
                   hover:shadow-lg bg-white dark:bg-gray-800 border border-gray-200 
                   dark:border-gray-700 flex items-center justify-center text-center 
                   hover:text-orange-500 hover:border-orange-400`}
               >
-                <span className="text-lg font-medium">
-                  {isMobile ? 
-                    topic.name.split(' ').map((word, i) => (
-                      <span key={i} className="block">{word}</span>
-                    )) : 
-                    topic.name
-                  }
+                <span className="font-medium text-lg md:text-2xl">
+                 
+                    {topic.name}
+                  
                 </span>
               </Link>
             </motion.div>
