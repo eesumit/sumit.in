@@ -20,7 +20,7 @@ const skills = [
   },
   {
     title:'NextJS',
-    description:'I Learned it before college.'
+    description:'I am currently learning Nextjs.'
   },
   { 
     title: 'NodeJS', 
@@ -28,7 +28,7 @@ const skills = [
   },
   {
     title:'ExpressJS',
-    description:'I Learned it before college.'
+    description:'Hands on Experience with Nodejs Framework-Expressjs'
   },
   {
     title:'CSS',
@@ -36,7 +36,7 @@ const skills = [
   },
   {
     title:'TailwindCSS',
-    description:'Learned tailwind for project and then eventually useing it everywhere. i love it.'
+    description:'Learned tailwind for project and then eventually using it everywhere. i love it.'
   },
   {
     title:'Bootstrap',
@@ -55,7 +55,7 @@ const skills = [
     description: 'Learned MongoDB for completing a college project that must require mongoDB.' 
   },
   { 
-    title: 'SQL', 
+    title: 'MySQL', 
     description: 'First learned it in college, then learned it from Shradha Didi(Apna College). Proficient in writing complex SQL queries, joins, indexing, normalization, and database design for relational databases like MySQL and PostgreSQL.' 
   },
   { 
@@ -64,11 +64,11 @@ const skills = [
   },
   {
     title:'C++',
-    description:'I Learned it before college.'
+    description:'I learned it in college sem.'
   },
   {
     title:'C',
-    description:'I Learned it before college.'
+    description:'I leasrned it in college sem.'
   },
 ];
 export default function Me() {
@@ -111,14 +111,14 @@ export default function Me() {
           className="font-bold text-3xl md:text-4xl mb-4"
           variants={item}
         >
-          Hello
+          Hello,
         </motion.h1>
 
         <motion.p
           className="font-bold text-xl md:text-2xl mb-6 text-orange-500"
           variants={item}
         >
-          I am Sumit Kumar
+          I&apos;m Sumit Kumar,
         </motion.p>
 
         <motion.div
@@ -128,12 +128,18 @@ export default function Me() {
           <p className='mb-4'>
             I have recently completed my Bachelor of Technology (B.Tech.) with a major in <span className="text-orange-500 font-semibold">Computer Science and Engineering</span>.
           </p>
-          <p className="mb-4">
-            I&#39;m a <span className="text-orange-500 font-semibold">Java Developer</span> with solid skills in <span className="text-orange-500 font-semibold">Backend development</span>, <span className="text-orange-500 font-semibold">Frontend development</span>, <span className="text-orange-500 font-semibold">Full-stack projects</span> and <span className="text-orange-500 font-semibold">Data Structures & Algorithms</span>.
+          <p className="mb-4 ">
+            I&#39;m a <span className="text-orange-500 font-semibold underline underline-offset-4">Full Stack Developer</span> with solid skills in  <span className="text-orange-500 font-semibold underline underline-offset-4">Backend development</span>, 
+            <span className="text-orange-500 font-semibold underline underline-offset-4">Frontend development</span>, 
+            <span className="text-orange-500 font-semibold underline underline-offset-4">Full-stack projects</span> and <span className="text-orange-500 font-semibold underline underline-offset-4">Data Structures & Algorithms</span>.
+            <span>
+              worked with databases MySQL and MongoDB.
+            </span>
           </p>
+          <p>
           <p className="mb-4">
             I&#39;m passionate about exploring 
-            <span className="text-blue-400 font-medium"> human behavior</span>, understanding the beauty of 
+            understanding the beauty of 
             <span className="text-blue-400 font-medium"> physics</span>, diving into 
             <span className="text-blue-400 font-medium"> tech innovations</span>, and asking questions about 
             <span className="text-blue-400 font-medium"> space and time</span>. I also enjoy learning about 
@@ -141,14 +147,12 @@ export default function Me() {
             <span className="text-blue-400 font-medium"> philosophy</span>, and keeping up with 
             <span className="text-blue-400 font-medium"> future technologies</span>.
           </p>
-
           <p className="mb-4">
             I enjoy solving problems, building real-world apps, and constantly leveling up as a developer. Currently, I&#39;m focused on becoming job-ready and aiming to make a real impact in the tech world.
           </p>
-
-          
           <p className='mb-4'>
             Apart from this I love <span className="text-orange-500 font-semibold">Modern Physics & Astronomy</span>.
+          </p>
           </p>
         </motion.div>
         <motion.div className="mb-8" variants={item}>
