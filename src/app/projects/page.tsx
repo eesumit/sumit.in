@@ -15,7 +15,24 @@ const projects = [
       "uses public API of swiggy app.",
       "implement shimmer effect."
     ],
-    github:"https://github.com/eesumit/Food-ordering-app"
+    github:"https://github.com/eesumit/Food-ordering-app",
+    live : null
+  },
+  {
+    title: "Many to ManyVideo Calling App",
+    image: "/videocallingapp.png",
+    about:
+      "A real-time video calling app with cart management, search functionality, feedback page.",
+    tech: ["JavaScript","React","Redux","Tailwind","Node"],
+    features: [
+      "Managing routes properly",
+      "Making Room for different chats",
+      "Video calling with live chat",
+      "uses public API"
+    ],
+    github:"https://github.com/eesumit/videocallingapp",
+    live:"https://videocallingapp-zeta.vercel.app/"
+
   },
    {
     title: "Different Sorting Visualiser with custom input.",
@@ -28,7 +45,8 @@ const projects = [
       "Array number sync with bar height",
       "Making UI responsive and sleek",
     ],
-    github:"https://eesumit.github.io/sorting-visualiser/"
+    github:"https://github.com/eesumit/sorting-visualiser",
+    live:"https://eesumit.github.io/sorting-visualiser/"
   },
   {
     title: "TODO List",
@@ -41,7 +59,8 @@ const projects = [
       "Strikethrough on completed tasks",
       "implement shimmer effect."
     ],
-    github:"https://github.com/eesumit/todo-list"
+    github:"https://github.com/eesumit/todo-list",
+    live:"https://eesumit.github.io/todo-list/"
   },
 ];
 
@@ -98,6 +117,7 @@ const Page = () => {
             </div>
             <div className="mt-4">
                 <h3>github : <a href={project.github} className="text-blue-400 hover:underline" target="_blank">Link</a></h3>
+                {project.live!=null && <h3>Live at : <a href={project.live} className="text-green-400 hover:underline" target="_blank">Link</a></h3>}
             </div>
           </div>
         ))}
