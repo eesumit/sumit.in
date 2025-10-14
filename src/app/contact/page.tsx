@@ -33,7 +33,7 @@ const Contact = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-
+      console.log("Resend Response:", res);
       const data = await res.json();
       console.log(data);
       if (data.success) {

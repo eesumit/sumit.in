@@ -12,6 +12,7 @@ export async function POST(req: Request) {
             subject: subject,
             html: `<p>${html} <br/>mail received from ${to}</p>`
         });
+        
         return Response.json({success:"mail was sent."});
     } catch (error) {
         console.log("error in sending mail", error);
