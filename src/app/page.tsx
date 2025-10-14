@@ -136,7 +136,7 @@ export default function Me() {
               worked with databases MySQL and MongoDB.
             </span>
           </p>
-          <p>
+          <div>
           <p className="mb-4">
             I&#39;m passionate about exploring 
             understanding the beauty of 
@@ -153,7 +153,7 @@ export default function Me() {
           <p className='mb-4'>
             Apart from this I love <span className="text-orange-500 font-semibold">Modern Physics & Astronomy</span>.
           </p>
-          </p>
+          </div>
         </motion.div>
         <motion.div className="mb-8" variants={item}>
           <a
