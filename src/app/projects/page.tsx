@@ -3,7 +3,7 @@ import React from "react";
 const projects = [
   {
     title: "Life Chronicles App",
-    image: "/zestyhub.png",
+    image: "/Life-Chronicles-app.png",
     about:
       "Life Chronicles — a modern social platform built to connect creators and users through authentic content and clean design. It’s like Instagram, but built from scratch. we can create our personal profile and share images/videos and text messages to all the other users. Cloudinary service is used to store the images/videos. Secure login system using Next-Auth and MongoDB for storing the data. Password reset functionality via mail service. User can update their profile and delete their account. User can follow other users and see their posts. ",
     tech: ["Forntend-[ Next.js, TypeScript, TailwindCSS, Shadcn UI ]","Backend-[ Next.js API Routes using App Router, Node.js, MongoDB Cloud Service ]","Authentication-[ Google Credentials Login/Register, Reset-password-Mail-System ]","Media Handling-[ Cloudinary for Images/Videos ]","Email-System-[ Nodemailer(Gmail SMTP) ]"],
@@ -20,23 +20,6 @@ const projects = [
     ],
     github:"https://github.com/eesumit/blogging",
     live : "https://blogging-gray-gamma.vercel.app/"
-  },
-  {
-    title: "Food Delivery App",
-    image: "/zestyhub.png",
-    about:
-      "A real-time food delivery app with cart management, search functionality, feedback page.",
-    tech: ["JavaScript","React","Redux","Tailwind","Node", "Express", "MongoDB"],
-    features: [
-      "Managing cart state globally",
-      "Implement search functionality",
-      "tracking offline/online state",
-      "uses public API of swiggy app.",
-      "implement shimmer effect.",
-      "Theme switcher",
-    ],
-    github:"https://github.com/eesumit/Food-ordering-app",
-    live : null
   },
   {
     title: "Many to ManyVideo Calling App",
@@ -67,6 +50,23 @@ const projects = [
     ],
     github:"https://github.com/eesumit/sorting-visualiser",
     live:"https://eesumit.github.io/sorting-visualiser/"
+  },
+  {
+    title: "Food Delivery App",
+    image: "/zestyhub.png",
+    about:
+      "A real-time food delivery app with cart management, search functionality, feedback page.",
+    tech: ["JavaScript","React","Redux","Tailwind","Node", "Express", "MongoDB"],
+    features: [
+      "Managing cart state globally",
+      "Implement search functionality",
+      "tracking offline/online state",
+      "uses public API of swiggy app.",
+      "implement shimmer effect.",
+      "Theme switcher",
+    ],
+    github:"https://github.com/eesumit/Food-ordering-app",
+    live : null
   },
   {
     title: "TODO List",
