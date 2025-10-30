@@ -1,7 +1,25 @@
 import React from "react";
 
 const projects = [
- 
+  {
+    title: "Life Chronicles App",
+    image: "/zestyhub.png",
+    about:
+      "Life Chronicles — a modern social platform built to connect creators and users through authentic content and clean design. It’s like Instagram, but built from scratch. we can create our personal profile and share images/videos and text messages to all the other users. Cloudinary service is used to store the images/videos. Secure login system using Next-Auth and MongoDB for storing the data. Password reset functionality via mail service. User can update their profile and delete their account. User can follow other users and see their posts. ",
+    tech: ["Forntend-[ Next.js, TypeScript, TailwindCSS, Shadcn UI ]","Backend-[ Next.js API Routes using App Router, Node.js, MongoDB Cloud Service ]","Authentication-[ Google Credentials Login/Register, Reset-password-Mail-System ]","Media Handling-[ Cloudinary for Images/Videos ]","Email-System-[ Nodemailer(Gmail SMTP) ]"],
+    features: [
+      "Secure login system using Next-Auth and MongoDB for storing the data.",
+      "Password reset functionality via mail service.",
+      "User can update their profile and delete their account.",
+      "User can follow other users and see their posts.",
+      "User can like and comment on posts.",
+      "User can search for other users and posts.",
+      "User can see their profile and posts.",
+      "User can see their followers and following.",
+    ],
+    github:"https://github.com/eesumit/blogging",
+    live : "https://blogging-gray-gamma.vercel.app/"
+  },
   {
     title: "Food Delivery App",
     image: "/zestyhub.png",
