@@ -51,7 +51,7 @@ const projects = [
     github:"https://github.com/eesumit/sorting-visualiser",
     live:"https://eesumit.github.io/sorting-visualiser/"
   },
-  {
+  {    
     title: "Food Delivery App",
     image: "/zestyhub.png",
     about:
