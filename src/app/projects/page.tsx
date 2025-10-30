@@ -16,6 +16,7 @@ const projects = [
       "User can search for other users and posts.",
       "User can see their profile and posts.",
       "User can see their followers and following.",
+      "User can switch between light and dark mode or system theme."
     ],
     github:"https://github.com/eesumit/blogging",
     live : "https://blogging-gray-gamma.vercel.app/"
@@ -31,7 +32,8 @@ const projects = [
       "Implement search functionality",
       "tracking offline/online state",
       "uses public API of swiggy app.",
-      "implement shimmer effect."
+      "implement shimmer effect.",
+      "Theme switcher",
     ],
     github:"https://github.com/eesumit/Food-ordering-app",
     live : null
