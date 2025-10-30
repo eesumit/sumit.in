@@ -128,7 +128,7 @@ const Page = () => {
 
             {/* Challenges */}
             <div className="mt-4">
-              <h3 className="font-semibold text-lg">Challenges</h3>
+              <h3 className="font-semibold text-lg">Features</h3>
               <ul className="list-disc list-inside space-y-1 text-gray-400 mt-2">
                 {project.features.map((c, j) => (
                   <li key={j}>{c}</li>
