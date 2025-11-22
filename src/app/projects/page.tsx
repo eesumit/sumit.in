@@ -22,6 +22,25 @@ const projects = [
     live : "https://blogging-gray-gamma.vercel.app/"
   },
   {
+    title: "AI FItness App",
+    image: "/fitnessapp.png",
+    about:
+      "AI Fitness app is a type of strict coach which can generate fitness plan for any type of user with any conditions based on user's preferences. User can generate multiple plans and compare them. It generates user exercise plan and diet plan. for next 7 Days. user can generate HD image for a particular exercise in the plan, for a particular diet picture in the diet plan. User can save the plan in the app itself or can export the plan in pdf format in one click. User can switch between dark and light themes. User can listen the particular diet and exercise plan by generate using AI. ",
+    tech: ["Forntend-[ Next.js, TypeScript, TailwindCSS, Shadcn UI ]","Backend-[ Next.js API Routes using App Router, Node.js, MongoDB Cloud Service ]"],
+    features: [
+      "Multiple user can generate plan and save them. compare them.",
+      "No authentication required.",
+      "User can get the plan in pdf format.",
+      "User can generate any no of plans with their needs.",
+      "Can view all the plans at a place.",
+      "Can generate exercise image and diet image.",
+      "Can regenerate the plan with same user credentials.",
+      "User can switch between light and dark mode or system theme."
+    ],
+    github:"https://github.com/eesumit/AI-Fitness-Coach-App",
+    live : "https://ai-fitness-coach-app-zeta.vercel.app/"
+  },
+  {
     title: "Many to ManyVideo Calling App",
     image: "/videocallingapp.png",
     about:
