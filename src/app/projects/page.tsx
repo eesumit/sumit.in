@@ -1,168 +1,174 @@
-import React from "react";
+'use client';
+import { motion } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
   {
     title: "Life Chronicles App",
     image: "/Life-Chronicles-app.png",
     about:
-      "Life Chronicles — a modern social platform built to connect creators and users through authentic content and clean design. It’s like Instagram, but built from scratch. we can create our personal profile and share images/videos and text messages to all the other users. Cloudinary service is used to store the images/videos. Secure login system using Next-Auth and MongoDB for storing the data. Password reset functionality via mail service. User can update their profile and delete their account. User can follow other users and see their posts. ",
-    tech: ["Forntend-[ Next.js, TypeScript, TailwindCSS, Shadcn UI ]","Backend-[ Next.js API Routes using App Router, Node.js, MongoDB Cloud Service ]","Authentication-[ Google Credentials Login/Register, Reset-password-Mail-System ]","Media Handling-[ Cloudinary for Images/Videos ]","Email-System-[ Nodemailer(Gmail SMTP) ]"],
+      "A modern social platform built to connect creators and users through authentic content and clean design. It’s like Instagram, but built from scratch. Includes secure login system using Next-Auth and MongoDB.",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "Shadcn UI", "MongoDB", "Cloudinary"],
     features: [
-      "Secure login system using Next-Auth and MongoDB for storing the data.",
-      "Password reset functionality via mail service.",
-      "User can update their profile and delete their account.",
-      "User can follow other users and see their posts.",
-      "User can like and comment on posts.",
-      "User can search for other users and posts.",
-      "User can see their profile and posts.",
-      "User can see their followers and following.",
-      "User can switch between light and dark mode or system theme."
+      "Secure login & Password reset",
+      "User Profiles & Followers",
+      "Like & Comment functionality",
+      "Dark/Light Mode"
     ],
-    github:"https://github.com/eesumit/blogging",
-    live : "https://blogging-gray-gamma.vercel.app/"
+    github: "https://github.com/eesumit/blogging",
+    live: "https://blogging-gray-gamma.vercel.app/"
   },
   {
-    title: "AI FItness App",
+    title: "AI Fitness App",
     image: "/fitnessapp.png",
     about:
-      "AI Fitness app is a type of strict coach which can generate fitness plan for any type of user with any conditions based on user's preferences. User can generate multiple plans and compare them. It generates user exercise plan and diet plan. for next 7 Days. user can generate HD image for a particular exercise in the plan, for a particular diet picture in the diet plan. User can save the plan in the app itself or can export the plan in pdf format in one click. User can switch between dark and light themes. User can listen the particular diet and exercise plan by generate using AI. ",
-    tech: ["Forntend-[ Next.js, TypeScript, TailwindCSS, Shadcn UI ]","Backend-[ Next.js API Routes using App Router, Node.js, MongoDB Cloud Service ]"],
+      "AI Fitness app generates fitness plans (exercise & diet) for any user preference. Includes PDF export and AI-generated imagery.",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "Node.js", "MongoDB"],
     features: [
-      "Multiple user can generate plan and save them. compare them.",
-      "No authentication required.",
-      "User can get the plan in pdf format.",
-      "User can generate any no of plans with their needs.",
-      "Can view all the plans at a place.",
-      "Can generate exercise image and diet image.",
-      "Can regenerate the plan with same user credentials.",
-      "User can switch between light and dark mode or system theme."
+      "AI Generated Plans",
+      "PDF Export",
+      "Progress Comparison",
+      "Diet & Exercise visualization"
     ],
-    github:"https://github.com/eesumit/AI-Fitness-Coach-App",
-    live : "https://ai-fitness-coach-app-zeta.vercel.app/"
+    github: "https://github.com/eesumit/AI-Fitness-Coach-App",
+    live: "https://ai-fitness-coach-app-zeta.vercel.app/"
   },
   {
-    title: "Many to ManyVideo Calling App",
+    title: "Video Calling App",
     image: "/videocallingapp.png",
-    about:
-      "A real-time video calling app with cart management, search functionality, feedback page.",
-    tech: ["JavaScript","React","Redux","Tailwind","Node"],
+    about: "A real-time video calling app with room management and live chat functionality.",
+    tech: ["JavaScript", "React", "Redux", "Tailwind", "Node.js"],
     features: [
-      "Managing routes properly",
-      "Making Room for different chats",
-      "Video calling with live chat",
-      "uses public API"
+      "Room creation",
+      "Live Chat",
+      "Real-time Video",
+      "Efficient Route Management"
     ],
-    github:"https://github.com/eesumit/videocallingapp",
-    live:"https://videocallingapp-zeta.vercel.app/"
-
+    github: "https://github.com/eesumit/videocallingapp",
+    live: "https://videocallingapp-zeta.vercel.app/"
   },
-   {
-    title: "Different Sorting Visualiser with custom input.",
+  {
+    title: "Sorting Visualiser",
     image: "/sorting.png",
-    about:
-      "Different sorting techniques visualiser in which we can expand array size with  ",
-    tech: ['JavaScript','CSS','HTML'],
+    about: "Interactive visualisation of different sorting algorithms like Merge Sort, Quick Sort, etc.",
+    tech: ['JavaScript', 'CSS', 'HTML'],
     features: [
-      "Many different tyes of sorting techniques like Merge sort, Quick sort etc.",
-      "Array number sync with bar height",
-      "Making UI responsive and sleek",
+      "Merge, Quick, Bubble Sort etc.",
+      "Custom array inputs",
+      "Responsive UI"
     ],
-    github:"https://github.com/eesumit/sorting-visualiser",
-    live:"https://eesumit.github.io/sorting-visualiser/"
+    github: "https://github.com/eesumit/sorting-visualiser",
+    live: "https://eesumit.github.io/sorting-visualiser/"
   },
-  {    
-    title: "Food Delivery App",
+  {
+    title: "ZestyHub",
     image: "/zestyhub.png",
-    about:
-      "A real-time food delivery app with cart management, search functionality, feedback page.",
-    tech: ["JavaScript","React","Redux","Tailwind","Node", "Express", "MongoDB"],
+    about: "Real-time food delivery app with cart management and Swiggy API integration.",
+    tech: ["React", "Redux", "Tailwind", "Node.js", "Express", "MongoDB"],
     features: [
-      "Managing cart state globally",
-      "Implement search functionality",
-      "tracking offline/online state",
-      "uses public API of swiggy app.",
-      "implement shimmer effect.",
-      "Theme switcher",
+      "Global Cart State",
+      "Live Search",
+      "Shimmer UI Effects",
+      "Online/Offline Tracking"
     ],
-    github:"https://github.com/eesumit/Food-ordering-app",
-    live : null
+    github: "https://github.com/eesumit/Food-ordering-app",
+    live: null
   },
   {
     title: "TODO List",
     image: "/todo.png",
-    about:
-      "Todo list tracking your task, complete/incomplete.",
-    tech: ["JavaScript","CSS","HTML"],
+    about: "Classic Todo list with local storage persistence.",
+    tech: ["JavaScript", "CSS", "HTML"],
     features: [
-      "Local storage used to store the task, means they still there when you close the tab of that browser.",
-      "Strikethrough on completed tasks",
-      "implement shimmer effect."
+      "Local Storage Persistence",
+      "Task Completion Tracking",
+      "Minimalist Design"
     ],
-    github:"https://github.com/eesumit/todo-list",
-    live:"https://eesumit.github.io/todo-list/"
+    github: "https://github.com/eesumit/todo-list",
+    live: "https://eesumit.github.io/todo-list/"
   },
 ];
 
-const Page = () => {
+export default function ProjectsPage() {
   return (
-    <div className="min-h-screen flex justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
-      <div className="w-11/12 md:w-9/12 mt-20 mb-10 space-y-12">
+    <div className="py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center mb-16"
+      >
+        <h1 className="text-5xl font-space font-bold mb-4">
+          Built with <span className="text-purple-500">Purpose</span>
+        </h1>
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          A collection of applications demonstrating full-stack capabilities, from AI integration to complex algorithms.
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
-          <div
+          <motion.div
             key={idx}
-            className="border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/5 backdrop-blur-lg relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: idx * 0.1 }}
+            className="group glass-panel overflow-hidden flex flex-col h-full"
           >
-            {/* Image */}
-            <div className=" overflow-hidden rounded-xl z-10">
+            {/* Image Container */}
+            <div className="relative h-48 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-60 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute text-white border-2 border-white z-20 top-10 left-10 font-bold text-5xl bg-gray-600 p-2 rounded-full w-12 h-12 flex justify-between items-center">
-                {idx+1}
+              <div className="absolute bottom-4 left-4 z-20">
+                <h2 className="text-2xl font-bold font-space text-white">{project.title}</h2>
               </div>
             </div>
 
-            {/* Title */}
-            <h2 className="text-2xl font-bold mt-4">{project.title}</h2>
+            {/* Content */}
+            <div className="p-6 flex-grow flex flex-col">
+              <p className="text-gray-400 text-sm mb-6 line-clamp-3">
+                {project.about}
+              </p>
 
-            {/* About */}
-            <p className="text-gray-300 mt-2">{project.about}</p>
-
-            {/* Tech Stack */}
-            <div className="mt-4">
-              <h3 className="font-semibold text-lg">Tech Stack</h3>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {project.tech.map((t, i) => (
-                  <span
-                    key={i}
-                    className="bg-indigo-500/20 border border-indigo-500 text-indigo-300 px-3 py-1 rounded-full text-sm"
-                  >
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.slice(0, 4).map((t, i) => (
+                  <span key={i} className="px-2 py-1 text-xs font-mono bg-purple-500/10 text-purple-300 rounded border border-purple-500/20">
                     {t}
                   </span>
                 ))}
+                {project.tech.length > 4 && (
+                  <span className="px-2 py-1 text-xs font-mono bg-gray-800 text-gray-400 rounded">+more</span>
+                )}
+              </div>
+
+              {/* Links */}
+              <div className="mt-auto flex gap-4 pt-4 border-t border-white/10">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+                >
+                  <FaGithub /> Code
+                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-teal-400 hover:text-teal-300 transition-colors"
+                  >
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
+                )}
               </div>
             </div>
-
-            {/* Challenges */}
-            <div className="mt-4">
-              <h3 className="font-semibold text-lg">Features</h3>
-              <ul className="list-disc list-inside space-y-1 text-gray-400 mt-2">
-                {project.features.map((c, j) => (
-                  <li key={j}>{c}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-4">
-                <h3>github : <a href={project.github} className="text-blue-400 hover:underline" target="_blank">Link</a></h3>
-                {project.live!=null && <h3>Live at : <a href={project.live} className="text-green-400 hover:underline" target="_blank">Link</a></h3>}
-            </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
   );
-};
-
-export default Page;
+}

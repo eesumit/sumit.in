@@ -1,204 +1,203 @@
-'use client'; // Required for Framer Motion in Next.js
-import { motion, Variants } from 'framer-motion';
-import { useState } from 'react';
+'use client';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
+import { FaGithub, FaLinkedin, FaTwitter, FaCode, FaServer, FaDatabase, FaLaptopCode, FaJava, FaDownload, FaInstagram } from 'react-icons/fa';
+import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiNodedotjs, SiMongodb, SiTailwindcss, SiMysql, SiCplusplus, SiLeetcode } from 'react-icons/si';
+
 const skills = [
-  { 
-    title: 'VCS', 
-    description: 'Experienced with version control, branching, pull requests, code reviews, and collaborative workflows. Familiar with resolving merge conflicts and CI/CD basics.' 
-  },
-  { 
-    title: 'ReactJS', 
-    description: 'Over 1 year of hands-on experience building interactive UIs and scalable SPAs. Developed several projects, including a Food Ordering App (see Projects). Proficient in hooks, context, component patterns, and performance optimization. Learned from Namaste React by Akshay Saini.' 
-  },
-  { 
-    title: 'JavaScript', 
-    description: 'JavaScript OMG! i was most Difficult language for me, because wrong sources i spent 1 year just in knowing that Javascript is the easiest language in the world. I love it. I learned it CodeWithHarry and then Finished Namaste Javascript by Akshay Saini. You can find my PDF notes in the sources section.' 
-  },
-  { 
-    title: 'TypeScript', 
-    description: 'Completed a project in Typescript and still learing it.' 
-  },
-  {
-    title:'NextJS',
-    description:'I am currently learning Nextjs.'
-  },
-  { 
-    title: 'NodeJS', 
-    description: 'Before learning backend in Java, I was preparing for full-stack MERN development due to its popularity and influence from my friend circle. I learned Node.js from Code with Harry and various other sites, including Akshay Saini’s Namaste Node.js.' 
-  },
-  {
-    title:'ExpressJS',
-    description:'Hands on Experience with Nodejs Framework-Expressjs'
-  },
-  {
-    title:'CSS',
-    description:'Good in css writing, Learned CSS from Shraddha Didi(Apna College)'
-  },
-  {
-    title:'TailwindCSS',
-    description:'Learned tailwind for project and then eventually using it everywhere. i love it.'
-  },
-  {
-    title:'Bootstrap',
-    description:'Learned tailwind for project and then eventually useing it everywhere. i love it.'
-  },
-  {
-    title:'HTML',
-    description:'I Learned it before college.'
-  },
-  { 
-    title: 'Java', 
-    description: 'Started learning Java in my 4th semester after initially working with C++ and i love it. I studied Java from Shradha Didi (Apna College) and tpointtech (formerly javatpoint), which provided beginner-friendly explanations and a great UI. My experience includes building backend systems, working with OOP concepts, exception handling, collections, multithreading, and JDBC. I have also implemented RESTful APIs and have a solid understanding of Java’s ecosystem, including Maven and Spring basics.' 
-  },
-  { 
-    title: 'MongoDB', 
-    description: 'Learned MongoDB for completing a college project that must require mongoDB.' 
-  },
-  { 
-    title: 'MySQL', 
-    description: 'First learned it in college, then learned it from Shradha Didi(Apna College). Proficient in writing complex SQL queries, joins, indexing, normalization, and database design for relational databases like MySQL and PostgreSQL.' 
-  },
-  { 
-    title: 'DSA', 
-    description: 'I started learning C language in my college 1st Sem, and after that i started basic DSA like Patterns and basic loops question. Then eventually started contest on codechef and Leetcode. I find leetcode more interesting so i shifted on leetcode and practice dsa queation and till now i have solved 700+ question and counting. With profeciency in Recursion, DP,Trees, BST, Binary Search, Queue, Stack, PriorityQueue, Maps, Sets etc. I love DSA.' 
-  },
-  {
-    title:'C++',
-    description:'I learned it in college sem.'
-  },
-  {
-    title:'C',
-    description:'I leasrned it in college sem.'
-  },
+  { icon: SiJavascript, name: 'JavaScript', color: 'text-yellow-400' },
+  { icon: SiTypescript, name: 'TypeScript', color: 'text-blue-500' },
+  { icon: SiReact, name: 'React', color: 'text-blue-400' },
+  { icon: SiNextdotjs, name: 'Next.js', color: 'text-white' },
+  { icon: SiNodedotjs, name: 'Node.js', color: 'text-green-500' },
+  { icon: SiTailwindcss, name: 'Tailwind', color: 'text-cyan-400' },
+  { icon: SiMongodb, name: 'MongoDB', color: 'text-green-400' },
+  { icon: FaJava, name: 'Java', color: 'text-red-500' },
+  { icon: SiMysql, name: 'MySQL', color: 'text-blue-300' },
+  { icon: SiCplusplus, name: 'C++', color: 'text-blue-400' },
 ];
-export default function Me() {
- const [activeIndex, setActiveIndex] = useState<number | null>(null);
-   
 
-  const container: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  };
+function TiltCard({ children, className }: { children: React.ReactNode, className?: string }) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
-  const item: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 10
-      }
-    }
-  };
+  const mouseX = useSpring(x, { stiffness: 500, damping: 100 });
+  const mouseY = useSpring(y, { stiffness: 500, damping: 100 });
+
+  function onMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    x.set(clientX - left - width / 2);
+    y.set(clientY - top - height / 2);
+  }
+
+  function onMouseLeave() {
+    x.set(0);
+    y.set(0);
+  }
+
+  const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
+  const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
 
   return (
     <motion.div
-      className="w-full h-full flex justify-center"
-      initial="hidden"
-      animate="visible"
-      variants={container}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      className={`relative transition-all duration-200 ease-out ${className}`}
     >
-      <div className="mt-24 w-[90%] md:w-[60%]">
-        <motion.h1
-          className="font-bold text-3xl md:text-4xl mb-4"
-          variants={item}
-        >
-          Hello,
-        </motion.h1>
+      {children}
+    </motion.div>
+  );
+}
 
-        <motion.p
-          className="font-bold text-xl md:text-2xl mb-6 text-orange-500"
-          variants={item}
-        >
-          I&apos;m Sumit Kumar,
-        </motion.p>
+export default function Home() {
+  const [textIndex, setTextIndex] = useState(0);
+  const words = ["Developer", "Designer", "Writer", "Thinker", "Software Engineer"];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTextIndex((prev) => (prev + 1) % words.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex flex-col gap-24 pb-20 overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="min-h-[90vh] grid lg:grid-cols-2 gap-12 items-center relative pl-4 md:pl-10">
         <motion.div
-          className="text-lg md:text-xl mb-8 leading-relaxed"
-          variants={item}
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="z-10 relative"
         >
-          <p className='mb-4'>
-            I have recently completed my Bachelor of Technology (B.Tech.) with a major in <span className="text-orange-500 font-semibold">Computer Science and Engineering</span>.
+          {/* Background Glows */}
+          <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-purple-600/20 rounded-full blur-[120px] -z-10 animate-pulse" />
+
+          <h2 className="text-xl md:text-2xl font-outfit text-teal-400 mb-4 tracking-wider uppercase font-semibold">Hello World, I'm</h2>
+          <h1 className="text-6xl md:text-8xl font-bold font-space text-white mb-6 leading-tight">
+            Sumit <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">Kumar</span>
+          </h1>
+          <div className="text-3xl md:text-5xl font-outfit text-gray-300 mb-8 h-[60px] flex items-center">
+            I am a&nbsp;
+            <motion.span
+              key={textIndex}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              className="text-white font-bold bg-white/10 px-4 py-1 rounded-lg backdrop-blur-sm"
+            >
+              {words[textIndex]}
+            </motion.span>
+          </div>
+          <p className="max-w-xl text-gray-400 text-lg md:text-xl leading-relaxed mb-10 border-l-4 border-purple-500 pl-6">
+            Crafting digital experiences that merge <span className="text-purple-400 font-bold">logic</span> with <span className="text-pink-400 font-bold">art</span>.
+            Specializing in high-performance web applications and scalable architecture.
           </p>
-          <p className="mb-4 ">
-            I&#39;m a <span className="text-orange-500 font-semibold underline underline-offset-4">Full Stack Developer</span> with solid skills in  <span className="text-orange-500 font-semibold underline underline-offset-4">Backend development</span>, 
-            <span className="text-orange-500 font-semibold underline underline-offset-4">Frontend development</span>, 
-            <span className="text-orange-500 font-semibold underline underline-offset-4">Full-stack projects</span> and <span className="text-orange-500 font-semibold underline underline-offset-4">Data Structures & Algorithms</span>.
-            <span>
-              worked with databases MySQL and MongoDB.
-            </span>
-          </p>
-          <div>
-          <p className="mb-4">
-            I&#39;m passionate about exploring 
-            understanding the beauty of 
-            <span className="text-blue-400 font-medium"> physics</span>, diving into 
-            <span className="text-blue-400 font-medium"> tech innovations</span>, and asking questions about 
-            <span className="text-blue-400 font-medium"> space and time</span>. I also enjoy learning about 
-            <span className="text-blue-400 font-medium"> design thinking</span>, reading on 
-            <span className="text-blue-400 font-medium"> philosophy</span>, and keeping up with 
-            <span className="text-blue-400 font-medium"> future technologies</span>.
-          </p>
-          <p className="mb-4">
-            I enjoy solving problems, building real-world apps, and constantly leveling up as a developer. Currently, I&#39;m focused on becoming job-ready and aiming to make a real impact in the tech world.
-          </p>
-          <p className='mb-4'>
-            Apart from this I love <span className="text-orange-500 font-semibold">Modern Physics & Astronomy</span>.
-          </p>
+
+          <div className="flex flex-wrap gap-6">
+            <Link href="/projects" className="group px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center gap-2">
+              View Work <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
+            <Link href="/contact" className="px-8 py-4 border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors hover:border-white/50">
+              Contact Me
+            </Link>
+            <a href="/sumit.resume.pdf" download className="px-8 py-4 border border-teal-500/30 text-teal-400 font-bold rounded-full hover:bg-teal-500/10 transition-colors flex items-center gap-2">
+              <FaDownload /> Resume
+            </a>
           </div>
         </motion.div>
-        <motion.div className="mb-8" variants={item}>
-          <a
-            href="/sumit.resume.pdf"
-            download
-            className="inline-block px-6 py-2 bg-orange-500 text-white font-semibold rounded-md shadow hover:bg-orange-600 transition-colors duration-200"
-          >
-            Download Resume
-          </a>
-        </motion.div>
-        <motion.h1
-          className="font-bold text-3xl md:text-4xl mb-4"
-          variants={item}
+
+        {/* Right Side Visuals - Live Stats */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="relative h-full min-h-[500px] flex flex-col items-center justify-center w-full perspective-1000"
         >
-          Skills
-        </motion.h1>
-         <motion.div className="skills text-lg md:text-xl leading-relaxed grid grid-cols-2 md:grid-cols-4 gap-4" variants={item}>
-          {skills.map((skill, index) => (
+          {/* Abstract Orbs */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-full blur-[100px] -z-10" />
+
+          {/* Floating Cards Container */}
+          <div className="relative w-full max-w-[500px] perspective-1000 group">
+            {/* Github Stats */}
             <motion.div
-              key={index}
-              layout
-              className={` cursor-pointer rounded-lg bg-[#3C3C3C] shadow-md ${activeIndex === index ? 'p-1 col-span-2 md:col-span-4' : ''}`}
-              onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-            >
-              <div className="text-white cursor-pointer p-3 rounded-md hover:bg-[#242424] text-center bg-[#2e2d2d]">{skill.title}</div>
-              {activeIndex === index && (
-                <motion.p
-                  className="mt-2 text-white px-3 text-center text-base"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {skill.description}
-                </motion.p>
-              )}
+              animate={{ y: [-10, 10, -10], rotate: [0, 2, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="mb-6 hover:z-20 transform transition-all duration-300 hover:scale-105"
+            >Github
+              <img
+                src="https://streak-stats.demolab.com?user=eesumit&theme=tokyonight&hide_border=true&background=00000000"
+                alt="Github Stats"
+                className="w-full drop-shadow-2xl"
+              />
             </motion.div>
+
+            {/* LeetCode Stats */}
+            <motion.div
+              animate={{ y: [10, -10, 10], rotate: [0, -2, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              className="hover:z-20 transform transition-all duration-300 hover:scale-105"
+            >Leetcode
+              <img
+                src="https://leetcard.jacoblin.cool/e_sumit?theme=tokyonight&font=Space%20Grotesk&ext=heatmap"
+                alt="LeetCode Stats"
+                className="w-full drop-shadow-2xl rounded-xl opacity-90 hover:opacity-100"
+              />
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Infinite Skills Marquee */}
+      <section className="py-10 bg-black/20 overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-transparent to-[#0a0a0a] z-10 pointer-events-none" />
+        <motion.div
+          className="flex gap-16 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        >
+          {[...skills, ...skills, ...skills].map((skill, idx) => (
+            <div key={idx} className="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity">
+              <skill.icon className={`text-4xl ${skill.color}`} />
+              <span className="text-xl font-space font-bold text-gray-300">{skill.name}</span>
+            </div>
           ))}
         </motion.div>
-        <motion.div>
-         </motion.div>
-      </div>
-    </motion.div>
+      </section>
+
+      {/* About Section with 3D Tilt */}
+      <section className="grid lg:grid-cols-2 gap-16 px-4 md:px-20 max-w-7xl mx-auto my-20">
+        <TiltCard className="glass-panel p-10 flex flex-col justify-center min-h-[300px] border-l-4 border-pink-500">
+          <FaCode className="text-6xl text-pink-500 mb-6 drop-shadow-[0_0_15px_rgba(236,72,153,0.5)]" />
+          <h3 className="text-4xl font-space font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">Code Poetry</h3>
+          <p className="text-gray-400 leading-relaxed text-lg">
+            I don't just write code; I write logic that lives. From complex data structures to seamless front-end interactions, I enjoy every layer of the stack.
+            Every function is a stanza, every module a verse.
+          </p>
+        </TiltCard>
+
+        <TiltCard className="glass-panel p-10 flex flex-col justify-center min-h-[300px] border-r-4 border-teal-400">
+          <FaLaptopCode className="text-6xl text-teal-400 mb-6 drop-shadow-[0_0_15px_rgba(45,212,191,0.5)]" />
+          <h3 className="text-4xl font-space font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500">Physics & Tech</h3>
+          <p className="text-gray-400 leading-relaxed text-lg">
+            Bridging the gap between tracking cosmic events and tracking DOM events. My passion for Modern Physics inspires my analytical approach to debugging.
+            I see the universe in algorithms.
+          </p>
+        </TiltCard>
+      </section>
+
+      {/* Social Banner */}
+      <section className="text-center pb-20">
+        <h2 className="text-2xl font-space text-gray-500 mb-8">Ready to Collaborate?</h2>
+        <div className="flex justify-center gap-8">
+          <a href="https://github.com/eesumit" target="_blank" className="text-4xl hover:text-white text-gray-600 transition-colors"><FaGithub /></a>
+          <a href="https://linkedin.com/in/e-sumit" target="_blank" className="text-4xl hover:text-blue-500 text-gray-600 transition-colors"><FaLinkedin /></a>
+          <a href="https://x.com/SUMITSINGHALGO" target="_blank" className="text-4xl hover:text-blue-400 text-gray-600 transition-colors"><FaTwitter /></a>
+          <a href="https://instagram.com/summiitsingh" target="_blank" className="text-4xl hover:text-pink-500 text-gray-600 transition-colors"><FaInstagram /></a>
+        </div>
+      </section>
+    </div>
   );
 }

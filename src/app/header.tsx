@@ -18,8 +18,8 @@ const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const menuItems: MenuItem[] = [
-    { name: 'Me', path: '/' },
-    { name: 'Tech-Writings', path: '/tech-writings' },
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Projects', path: '/projects' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
       <div className="relative w-full h-16 flex items-center">
         {/* Mobile Hamburger Menu */}
         <div className="md:hidden absolute right-12 top-1/2 -translate-y-1/2 z-50 cursor-pointer">
-          <div 
+          <div
             className="flex flex-col space-y-1"
             onClick={() => setMenuOpen(prev => !prev)}
           >
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="absolute left-1/2 transform -translate-x-1/2 bg-[#2e2d2d] rounded-lg h-14 w-[90%] md:w-[70%] flex items-center justify-between px-6 md:px-10"
+              className="absolute left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-md border border-white/10 rounded-full h-14 w-[90%] md:w-[70%] flex items-center justify-between px-6 md:px-10"
             >
               {/* Logo */}
               <div className="flex items-center">
@@ -126,7 +126,7 @@ const Header: React.FC = () => {
               {/* Mobile Navigation Menu */}
               <AnimatePresence>
                 {menuOpen && (
-                  <motion.div 
+                  <motion.div
                     className="absolute top-12 right-0 w-full bg-[#2e2d2d] rounded-b-lg md:hidden"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}

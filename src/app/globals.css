@@ -1,65 +1,85 @@
 @import "tailwindcss";
 
 :root {
-  --background: #3C3C3C;
-  --foreground: #ffffff;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-inter: 'Inter', sans-serif;
+  /* GenZ Dark Mode Palette */
+  --bg-dark: #0a0a0a;
+  --bg-card: #121212;
+  --primary: #c084fc; /* Purple */
+  --secondary: #2dd4bf; /* Teal */
+  --accent: #f472b6; /* Pink */
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-poppins-sans);
-  --font-mono: var(--font-poppins-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #3C3C3C;
-    --foreground: #ededed;
-  }
+  --color-background: var(--bg-dark);
+  --color-foreground: var(--text-main);
+  --font-space: var(--font-space);
+  --font-outfit: var(--font-outfit);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-poppins),"Fira Code", "Courier New", Arial, Helvetica, sans-serif;
-}
-main {
-  overflow-y: auto;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-outfit);
   overflow-x: hidden;
-  scrollbar-width: none; /* Firefox */
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-  -ms-overflow-style: none; /* IE and Edge */
-}
-main::-webkit-scrollbar {
-  width: 0px; /* Chrome, Safari, Opera */
-  display: none;
 }
 
-/* Add to your global.css */
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Utility Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(192, 132, 252, 0.5);
+}
+
+.heading-font {
+  font-family: var(--font-space);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Previous Utilities (Kept for compatibility if needed elsewhere, though we are refactoring) */
 .highlight {
-  @apply text-orange-500 font-semibold;
+  @apply text-purple-400 font-semibold;
 }
-
 .tech {
-  @apply text-blue-400 font-medium;
-}
-
-.wave {
-  display: inline-block;
-  animation: wave 2s infinite;
-  transform-origin: 70% 70%;
-}
-
-@keyframes wave {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(-10deg); }
-  20% { transform: rotate(12deg); }
-  30% { transform: rotate(-10deg); }
-  40% { transform: rotate(9deg); }
-  50% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  @apply text-teal-400 font-medium;
 }
