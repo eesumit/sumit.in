@@ -124,20 +124,6 @@ export default function Home() {
 
           {/* Floating Cards Container */}
           <div className="relative w-full max-w-[500px] perspective-1000 group">
-            {/* Github Stats */}
-            <motion.div
-              animate={{ y: [-10, 10, -10], rotate: [0, 2, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="mb-6 hover:z-20 transform transition-all duration-300 hover:scale-105"
-            >Github
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://streak-stats.demolab.com?user=eesumit&theme=tokyonight&hide_border=true&background=00000000"
-                alt="Github Stats"
-                className="w-full drop-shadow-2xl"
-              />
-            </motion.div>
-
             {/* LeetCode Stats */}
             <motion.div
               animate={{ y: [10, -10, 10], rotate: [0, -2, 0] }}
