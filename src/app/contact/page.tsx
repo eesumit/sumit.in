@@ -43,7 +43,7 @@ export default function Contact() {
       } else {
         setMessage('Failed to send message.');
       }
-    } catch (err) {
+    } catch {
       setMessage('Network error occurred.');
     }
     setLoading(false);
@@ -60,7 +60,7 @@ export default function Contact() {
           Get in <span className="text-purple-500">Touch</span>
         </h1>
         <p className="text-gray-400 text-lg">
-          Have a project in mind or just want to say hi? I'm always open to new ideas.
+          Have a project in mind or just want to say hi? I&apos;m always open to new ideas.
         </p>
       </motion.div>
 

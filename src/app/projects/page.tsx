@@ -117,6 +117,7 @@ export default function ProjectsPage() {
             {/* Image Container */}
             <div className="relative h-48 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={project.image}
                 alt={project.title}

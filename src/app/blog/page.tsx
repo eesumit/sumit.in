@@ -22,10 +22,11 @@ export default async function BlogPage() {
     return (
         <div className="max-w-4xl mx-auto py-12">
             <h1 className="text-4xl md:text-5xl font-space font-bold mb-12 text-center">
-                Sumit's <span className="text-purple-500">Blogs</span>
+                Sumit&apos;s <span className="text-purple-500">Blogs</span>
             </h1>
 
             <div className="grid gap-8">
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {posts.map((post: any) => (
                     <Link
                         key={post._id}

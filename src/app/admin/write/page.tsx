@@ -27,6 +27,7 @@ function Editor() {
             // Fetch post details if editing
             fetch('/api/posts').then(res => res.json()).then(posts => {
                 // In real app, fetch one via API
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const post = posts.find((p: any) => p._id === editId);
                 if (post) setFormData(post);
             });
