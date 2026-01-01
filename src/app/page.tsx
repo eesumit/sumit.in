@@ -189,6 +189,26 @@ export default function Home() {
           <a href="https://instagram.com/summiitsingh" target="_blank" className="text-4xl hover:text-pink-500 text-gray-600 transition-colors"><FaInstagram /></a>
         </div>
       </section>
+      <div className='px-50'>
+        <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%', borderRadius: '8px' }}>
+    <iframe 
+        src="http://localhost:3001/embed/defc58e7-6db8-4dec-9eb9-86d2c01dcdb0" 
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+        allowFullScreen={true}
+        allow="clipboard-write"
+    />
+</div>
+      </div>
+      <div className='px-60 py-20'>
+        <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%', borderRadius: '8px' }}>
+    <iframe 
+        src="http://localhost:3001/embed/defc58e7-6db8-4dec-9eb9-86d2c01dcdb0" 
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+        allowFullScreen={true}
+        allow="clipboard-write"
+    />
+</div>
+      </div>
     </div>
   );
 }
