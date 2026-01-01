@@ -9,7 +9,7 @@ declare global {
     var mongoose: GlobalMongoose | undefined;
 }
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://e_sumit:U8c5fCQGofi4gcwe@cluster0.ktyrkza.mongodb.net/blog';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
     throw new Error('Please define the MONGODB_URI environment variable');

@@ -1,9 +1,12 @@
 'use client';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter, FaCode, FaServer, FaDatabase, FaLaptopCode, FaJava, FaDownload, FaInstagram } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiNodedotjs, SiMongodb, SiTailwindcss, SiMysql, SiCplusplus, SiLeetcode } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaTwitter, FaCode, FaLaptopCode, FaJava, FaDownload, FaInstagram } from 'react-icons/fa';
+import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiNodedotjs, SiMongodb, SiTailwindcss, SiMysql, SiCplusplus } from 'react-icons/si';
+
+// ... skills array omitted if unchanged, wait I can't look-behind.
+// I need safely replace imports line.
 
 const skills = [
   { icon: SiJavascript, name: 'JavaScript', color: 'text-yellow-400' },
@@ -60,7 +63,7 @@ export default function Home() {
       setTextIndex((prev) => (prev + 1) % words.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="flex flex-col gap-24 pb-20 overflow-x-hidden">
@@ -75,7 +78,7 @@ export default function Home() {
           {/* Background Glows */}
           <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-purple-600/20 rounded-full blur-[120px] -z-10 animate-pulse" />
 
-          <h2 className="text-xl md:text-2xl font-outfit text-teal-400 mb-4 tracking-wider uppercase font-semibold">Hello World, I'm</h2>
+          <h2 className="text-xl md:text-2xl font-outfit text-teal-400 mb-4 tracking-wider uppercase font-semibold">Hello World, I&apos;m</h2>
           <h1 className="text-6xl md:text-8xl font-bold font-space text-white mb-6 leading-tight">
             Sumit <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">Kumar</span>
           </h1>
@@ -127,6 +130,7 @@ export default function Home() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="mb-6 hover:z-20 transform transition-all duration-300 hover:scale-105"
             >Github
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://streak-stats.demolab.com?user=eesumit&theme=tokyonight&hide_border=true&background=00000000"
                 alt="Github Stats"
@@ -140,6 +144,7 @@ export default function Home() {
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
               className="hover:z-20 transform transition-all duration-300 hover:scale-105"
             >Leetcode
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://leetcard.jacoblin.cool/e_sumit?theme=tokyonight&font=Space%20Grotesk&ext=heatmap"
                 alt="LeetCode Stats"
@@ -173,7 +178,7 @@ export default function Home() {
           <FaCode className="text-6xl text-pink-500 mb-6 drop-shadow-[0_0_15px_rgba(236,72,153,0.5)]" />
           <h3 className="text-4xl font-space font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">Code Poetry</h3>
           <p className="text-gray-400 leading-relaxed text-lg">
-            I don't just write code; I write logic that lives. From complex data structures to seamless front-end interactions, I enjoy every layer of the stack.
+            I don&apos;t just write code; I write logic that lives. From complex data structures to seamless front-end interactions, I enjoy every layer of the stack.
             Every function is a stanza, every module a verse.
           </p>
         </TiltCard>
