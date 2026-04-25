@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Copyright & Brand */}
         <div className="flex items-center gap-3">
           <span className="text-gray-400">© {new Date().getFullYear()}</span>
-          <span className="font-bold font-space text-white">SUMIT.in</span>
+          <span className="font-bold font-space text-white">esumit.in</span>
           <span className="px-2 py-0.5 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30 text-purple-300 text-[10px] font-mono uppercase tracking-wider">
             Beta
           </span>

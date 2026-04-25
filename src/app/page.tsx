@@ -100,13 +100,13 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap gap-6">
-            <Link href="/projects" className="group px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center gap-2">
+            <Link href="/projects" className="group px-8 py-2 bg-white text-black font-bold rounded-lg hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center gap-2">
               View Work <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
-            <Link href="/contact" className="px-8 py-4 border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors hover:border-white/50">
+            <Link href="/contact" className="px-8 py-2 border border-white/20 text-white font-bold rounded-lg hover:bg-white/10 transition-colors hover:border-white/50">
               Contact Me
             </Link>
-            <a href="/sumit.resume.pdf" download className="px-8 py-4 border border-teal-500/30 text-teal-400 font-bold rounded-full hover:bg-teal-500/10 transition-colors flex items-center gap-2">
+            <a href="/sumit.resume.pdf" download className="px-8 py-2 border border-teal-500/30 text-teal-400 font-bold rounded-lg hover:bg-teal-500/10 transition-colors flex items-center gap-2">
               <FaDownload /> Resume
             </a>
           </div>

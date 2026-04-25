@@ -81,7 +81,7 @@ const Header: React.FC = () => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="absolute left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-md border border-white/10 rounded-full h-14 w-[90%] md:w-[70%] flex items-center justify-between px-6 md:px-10"
+              className="absolute left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-md border border-white/10 rounded-lg h-14 w-[90%] md:w-[70%] flex items-center justify-between px-6 md:px-10"
             >
               {/* Logo */}
               <div className="flex items-center">
